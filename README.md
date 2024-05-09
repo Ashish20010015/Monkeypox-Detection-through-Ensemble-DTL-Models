@@ -35,12 +35,12 @@ are as follows:
 
 **Image preprocessing**: Image pre-processing refers to a set of techniques used to  prepare digital images for further analysis or processing. This is commonly done in fields like 
 computer vision, medical imaging, and satellite image processing. Here are some common steps involved in image pre-processing:
-• Scaling Features: The skin photos in the dataset are first convertedto RGB using OpenCV techniques, and then they are resized to 224 × 224 pixels. The maximum picture size that the system will accept is 255,
-although the normal image size falls between [0,255]. 
-• Data Augmentation for MSLDV2 Dataset: Data augmentation is the technique of adding more data to a dataset by transforming the existing data in an unpredictable way. The **Keras** deep learning system has a class called
-**ImageDataGenerator** that lets us usepicture data to fit the model.
-• Data splitting: In particular, the dataset was split into two halves for this study: 80% was used for training and 20% was used to evaluate our suggested model. For model validation, 20% of the picture 
-samples from the training dataset are used.
+
+• Scaling Features: The skin photos in the dataset are first convertedto RGB using OpenCV techniques, and then they are resized to 224 × 224 pixels. The maximum picture size that the system will accept is 255,although the normal image size falls between [0,255]. 
+
+• Data Augmentation for MSLDV2 Dataset: Data augmentation is the technique of adding more data to a dataset by transforming the existing data in an unpredictable way. The **Keras** deep learning system has a class called **ImageDataGenerator** that lets us usepicture data to fit the model.
+
+• Data splitting: In particular, the dataset was split into two halves for this study: 80% was used for training and 20% was used to evaluate our suggested model. For model validation, 20% of the picture samples from the training dataset are used.
 
 **Training and Testing of Deep Transfer Learning -based Models**
 
@@ -51,11 +51,8 @@ which has been trained on a large-scale dataset such as ImageNet. This pretraine
 output to accommodate a different number of classes relevant to our target dataset.
 3. **Feature Extraction with Global Average Pooling:** After removing the top layers, we introduce a Global Average Pooling (GAP) layer. This layer aggregates spatial information 
 across the feature maps produced by the preceding layers, resulting in a compact representation of the input image.
-4. **Flattening and Dense Layers:** The output of the GAP layer is flattened into a 1-dimensional vector to prepare it for input into fully connected dense layers. We add two hidden dense 
-layers with Rectified Linear Unit (ReLU) activation functions, which introduce nonlinearity to the model. Dropout regularization is applied to mitigate overfitting by randomly 
-deactivating a fraction of neurons during training.
-5. **Output Layer Customization:** Finally, we append a dense output layer with softmax activation. This layer transforms the model's raw predictions into probabilities for each class 
-in the target dataset.
+4. **Flattening and Dense Layers:** The output of the GAP layer is flattened into a 1-dimensional vector to prepare it for input into fully connected dense layers. We add two hidden dense layers with Rectified Linear Unit (ReLU) activation functions, which introduce nonlinearity to the model. Dropout regularization is applied to mitigate overfitting by randomly deactivating a fraction of neurons during training.
+5. **Output Layer Customization:** Finally, we append a dense output layer with softmax activation. This layer transforms the model's raw predictions into probabilities for each class in the target dataset.
 
 Model Training and testing:
 The model is assembled and then trained using the categorical cross-entropy loss function and the Adam optimizer (Kingma & Ba, 2014). The training dataset was utilized to train our model, and the validation dataset was used tovalidate it. The
@@ -73,8 +70,11 @@ clear majority in the hard voting predictions.By combining both hard and soft vo
 classifier.
 
 • I've added a function combined_voting to perform ensemble voting with confidence score and threshold adjustment.
+
 • Inside train_evaluate_ensemble, after evaluating individual models and obtaining their predictions, I've calculated ensemble predictions using hard voting, soft voting, and the combined approach.
+
 • The combined_voting function takes the predictions from individual models, calculates the confidence scores, and then combines the predictions based on the threshold.
+
 • Finally, I've evaluated the combined predictions and printed the classification report and confusion matrix for the combined model
 
 **Apply Post-processing technique (Smoothing Technique)- Median Filtering**
@@ -83,8 +83,11 @@ noise or outliers and to improve the quality of the predictions. Smoothing and f
 used in slightly different contexts and may employ different mathematical methods.
 
 • I've defined a function apply_post_processing to apply median filtering to the combined predictions.
+
 • The apply_post_processing function takes the combined predictions and applies the median filter with a specified filter size (in this case, 3x3).
+
 • After obtaining the combined predictions, we apply the post-processing technique to filter the predictions.
+
 • Finally, we evaluate the filtered predictions and print the classification report and confusion matrix for the combined model after post-processing.
 
 
