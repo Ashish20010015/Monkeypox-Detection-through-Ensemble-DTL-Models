@@ -2,7 +2,7 @@
 
 I am using the dataset from https://www.kaggle.com/datasets/joydippaul/mpox-skin-lesion-dataset-version-20-msld-v20
 
-**Monkeypox Skin Lesion Dataset Version 2.0 (MSLD v2.0)** comprises images from six distinct classes, namely Mpox (284 images), Chickenpox (75 images), Measles (55 images), Cowpox (66 images), Hand-foot-mouth disease or HFMD (161 images), and Healthy (114 images). The dataset includes 755 original skin lesion images sourced from 541 distinct patients, ensuring a representative sample. Importantly, the latest version has received endorsement from professional dermatologists and obtained approval from appropriate regulatory authorities.
+**Monkeypox Skin Lesion Dataset Version 2.0 (MSLD v2.0)** comprises images from six distinct classes, namely Mpox (284 images), Chickenpox (75 images), Measles (55 images), Cowpox (66 images), Hand-foot-mouth disease or HFMD (161 images), and Healthy (114 images). The dataset includes 755 original skin lesion images sourced from 541 distinct patients, ensuring a representative sample. Importantly, the latest version has received endorsement from professional d dermatologists and obtained approval from appropriate regulatory authorities.
 
 Content
 The dataset is organized into two folders:
